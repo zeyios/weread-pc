@@ -5,41 +5,41 @@ on:
       name:
         description: 'app name'
         required: true
-        default: 'twitter'
+        default: 'weread'
       title:
         description: 'app title'
         required: true
-        default: 'Twitter'
+        default: 'WeRead'
       name_zh:
         description: 'app name in Chinese'
         required: true
-        default: '推特'
+        default: '微信读书'
       url:
         description: 'app url'
         required: true
-        default: 'https://twitter.com/'
+        default: 'https://weread.qq.com/'
   workflow_call:
     inputs:
       name:
         description: 'app name'
         type: string
         required: true
-        default: 'twitter'
+        default: 'weread'
       title:
         description: 'app title'
         required: true
         type: string
-        default: 'Twitter'
+        default: 'WeRead'
       name_zh:
         description: 'app name in Chinese'
         required: true
         type: string
-        default: '推特'
+        default: '微信读书'
       url:
         description: 'app url'
         required: true
         type: string
-        default: 'https://twitter.com/'
+        default: 'https://weread.qq.com/'
 
 jobs:
   build_single_app:
