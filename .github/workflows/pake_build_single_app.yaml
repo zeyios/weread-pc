@@ -98,7 +98,7 @@ jobs:
           URL: ${{ inputs.url }}
         run: |
           npm install
-          npm run build:config
+          # npm run build:config
 
       - name: Build for Ubuntu
         if: matrix.os == 'ubuntu-latest'

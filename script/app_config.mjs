@@ -27,7 +27,7 @@ const variables = {
 
   pakeConfigPath: 'src-tauri/pake.json',
   tauriConfigPath: 'src-tauri/tauri.conf.json',
-  identifier: `com.pake.${process.env.NAME}`,
+  identifier: `com.zeyio.weread`,
 
   linux: {
     configFilePath: 'src-tauri/tauri.linux.conf.json',
@@ -36,10 +36,10 @@ const variables = {
     defaultIconPath: 'src-tauri/png/icon_512.png',
     icon: [`png/${process.env.NAME}_512.png`],
     desktopEntry,
-    desktopEntryPath: `src-tauri/assets/com-pake-${process.env.NAME}.desktop`,
+    desktopEntryPath: `src-tauri/assets/com-zeyio-weread.desktop`,
     desktopEntryConfig: {
-      configKey: `/usr/share/applications/com-pake-${process.env.NAME}.desktop`,
-      configValue: `assets/com-pake-${process.env.NAME}.desktop`,
+      configKey: `/usr/share/applications/com-zeyio-weread.desktop`,
+      configValue: `assets/com-zeyio-weread.desktop`,
     },
   },
   macos: {

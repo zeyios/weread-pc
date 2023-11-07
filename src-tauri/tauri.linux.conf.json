@@ -8,13 +8,13 @@
           "icons/icon.icns",
           "icons/icon.ico"
       ],
-      "identifier": "com.zeyio.pake-weread",
+      "identifier": "com.zeyio.weread",
       "active": true,
       "category": "DeveloperTool",
       "copyright": "zeyio",
       "deb": {
         "depends": ["curl", "wget"],
-        "files": {"/usr/share/applications/com-zeyio-pake-weread.desktop": "assets/com-zeyio-pake-weread.desktop"}
+        "files": {"/usr/share/applications/com-zeyio-pake-weread.desktop": "assets/com-zeyio-weread.desktop"}
       },
       "externalBin": [],
       "longDescription": "",
