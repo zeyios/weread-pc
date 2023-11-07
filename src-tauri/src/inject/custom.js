@@ -42,7 +42,6 @@ function applyCss() {
     }
     
     .drag-bar {
-      cursor: col-resize;
       position: fixed;
       height: 100%;
       width: 8px;
@@ -51,6 +50,7 @@ function applyCss() {
     }
 
     .right-bar {
+      cursor: col-resize;
       left: 50%;
       transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
       background: linear-gradient(0.25turn, #295BE9, #295BE9 20%, transparent 20%, transparent);
