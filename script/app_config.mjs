@@ -136,10 +136,10 @@ function updateTauriJson() {
 }
 
 function updateIconFile(iconPath, defaultIconPath) {
-  if (!existsSync(iconPath)) {
-    console.warn(`Icon for ${process.env.NAME} not found, will use default icon`);
-    copyFileSync(defaultIconPath, iconPath);
-  }
+  // if (!existsSync(iconPath)) {
+  //   console.warn(`Icon for ${process.env.NAME} not found, will use default icon`);
+  //   copyFileSync(defaultIconPath, iconPath);
+  // }
 }
 
 function updatePlatformConfig(platformConfig, platformVariables) {
