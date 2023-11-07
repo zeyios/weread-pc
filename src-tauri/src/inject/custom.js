@@ -307,11 +307,55 @@ function titleHelper() {
   );
 }
 
+function modifyHeader() {
+  const sendBook = document.querySelector('.navBar_link.navBar_link_Upload');
+  const linkPage = document.querySelector('.navBar_link.navBar_link_ink');
+  const linkPhone = document.querySelector('.navBar_link.navBar_link_Phone');
+
+  function createALink(name, url) {
+    const item = document.createElement('a');
+    item.innerText = name;
+    item.target = '_blank';
+    item.className = 'navBar_link';
+
+    item.addEventListener('click', () => {
+      window.__TAURI__.shell.open(url);
+    });
+    return item;
+  }
+
+
+  if (sendBook) {
+    const githubLink = createALink('Github', 'https://github.com/zeyios/weread-pc');
+    sendBook.replaceWith(githubLink);
+  }
+
+  if (linkPage) {
+    const reportLink = createALink('PC版问题反馈', 'https://github.com/zeyios/weread-pc/issues');
+    linkPage.replaceWith(reportLink);
+  }
+}
+
+function customHeader() {
+  modifyHeader();
+
+  var observer = new MutationObserver(function(mutations, observer) {
+      modifyHeader();
+  });
+  var options = {
+    'childList': true,
+    'subtree': true,
+  };
+  observer.observe(document.body, options);
+  
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   titleHelper();
   loadFont();
 
   applyCss();
+  customHeader();
 
   if (window.location.pathname.indexOf('web/reader') >= 0) {
     scrollListener();
