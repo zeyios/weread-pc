@@ -1,0 +1,26 @@
+{
+  "tauri": {
+      "bundle": {
+        "icon":[
+          "icons/32x32.png",
+          "icons/128x128.png",
+          "icons/128x128@2x.png",
+          "icons/icon.icns",
+          "icons/icon.ico"
+      ],
+      "identifier": "com.zeyio.pake-weread",
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "zeyio",
+      "deb": {
+        "depends": ["curl", "wget"],
+        "files": {"/usr/share/applications/com-zeyio-pake-weread.desktop": "assets/com-zeyio-pake-weread.desktop"}
+      },
+      "externalBin": [],
+      "longDescription": "",
+      "resources": [],
+      "shortDescription": "",
+      "targets": ["deb", "appimage"]
+    }
+  }
+}

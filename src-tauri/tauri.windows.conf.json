@@ -1,0 +1,37 @@
+{
+  "tauri": {
+    "bundle": {
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.zeyio.pake-weread",
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "zeyio",
+      "externalBin": [],
+      "longDescription": "",
+      "resources": [
+        "png/weread_256.ico"
+      ],
+      "shortDescription": "",
+      "targets": [
+        "msi"
+      ],
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "wix": {
+          "language": [
+            "en-US"
+          ],
+          "template": "assets/main.wxs"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "weread",
+      "title": "WeRead",
+      "name_zh": "微信阅读",
+      "url": "https://weread.qq.com/"
+    }
+  ]
+}

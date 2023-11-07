@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Categories=Office
+Exec=com-pake-weread
+Icon=com-pake-weread
+Name=com-pake-weread
+Name[zh_CN]=微信阅读
+StartupNotify=true
+Terminal=false
+Type=Application
