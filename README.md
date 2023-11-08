@@ -15,7 +15,7 @@
 - [ ] 自定义背景图片
 
 <br/>
-字体修改：
+霞鹜文楷字体：
 
 <img src='./imgs/weread-index.png' width=600/>
 
