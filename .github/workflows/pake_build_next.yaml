@@ -1,8 +1,6 @@
 name: Build All Popular Apps
 on:
-  push:
-    tags:
-      - 'V*'
+  workflow_dispatch:
 
 jobs:
   read_apps_config:
