@@ -29,7 +29,7 @@ function applyCss() {
       transition: opacity .3s ease-in-out;
     }
 
-    .wr_whiteTheme div.readerContent div.app_content {
+    div.readerContent div.app_content {
       max-width: ${getLS(contentWidthKey) || 1000}px;
     }
 
