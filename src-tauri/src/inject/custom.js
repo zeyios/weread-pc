@@ -30,7 +30,7 @@ function applyCss() {
     }
 
     div.readerContent div.app_content {
-      max-width: ${getLS(contentWidthKey) || 1000}px;
+      max-width: ${getLS(contentWidthKey) || 1000}px !important; 
     }
 
     .wr_whiteTheme .readerContent div.app_content {
@@ -185,8 +185,7 @@ function loadFont() {
 
 function changeContentSize(sizePx) {
   const content = document.querySelector(".readerContent div.app_content");
-  console.log('changesize', sizePx);
-  content.style['max-width'] = `${sizePx}px`;
+  content.style.setProperty('max-width',`${sizePx}px`, 'important');
   const event = new Event('resize');
   window.dispatchEvent(event);
 }
