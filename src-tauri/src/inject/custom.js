@@ -83,10 +83,12 @@ function applyCss() {
       height: 2px;
       transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
       opacity: 0;
+      display: none;
     }
 
     .darg-indicator.active {
       opacity: 1;
+      display: block;
     }
 
     .ind-num {
@@ -104,10 +106,12 @@ function applyCss() {
       margin-bottom: 2px;
       z-index: 10;
       opacity: 0;
+      display: none;
     }
 
     .ind-num.active {
       opacity: 1;
+      display: block;
     }
   `;
 
