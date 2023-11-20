@@ -47,29 +47,18 @@ pub fn menu_event_handle(event: WindowMenuEvent) {
 }
 
 #[cfg(any(target_os = "linux", target_os = "windows"))]
-pub fn get_system_tray(show_menu: bool) -> SystemTray {
-    let hide_app = CustomMenuItem::new("hide_app".to_string(), "Hide App");
-    let show_app = CustomMenuItem::new("show_app".to_string(), "Show App");
+pub fn get_system_tray() -> SystemTray {
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
-    let about = CustomMenuItem::new("about".to_string(), "About");
-    let tray_menu = SystemTrayMenu::new().add_item(hide_app).add_item(show_app);
-    if show_menu {
-        let hide_menu = CustomMenuItem::new("hide_menu".to_string(), "Hide Menu");
-        let show_menu = CustomMenuItem::new("show_menu".to_string(), "Show Menu");
-        let tray_menu = tray_menu
-            .add_item(hide_menu)
-            .add_item(show_menu)
-            .add_item(quit)
-            .add_item(about);
-        SystemTray::new().with_menu(tray_menu)
-    } else {
-        let tray_menu = tray_menu.add_item(quit).add_item(about);
-        SystemTray::new().with_menu(tray_menu)
-    }
+    let tray_menu = SystemTrayMenu::new().add_item(quit);
+    return SystemTray::new().with_menu(tray_menu);
 }
 
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 pub fn system_tray_handle(app: &tauri::AppHandle, event: SystemTrayEvent) {
+    if let SystemTrayEvent::LeftClick{..} = event {
+        app.get_window("pake").unwrap().set_focus().unwrap();
+    }
+
     if let SystemTrayEvent::MenuItemClick { tray_id: _, id, .. } = event {
         match id.as_str() {
             "hide_app" => {
@@ -112,4 +101,6 @@ pub fn system_tray_handle(app: &tauri::AppHandle, event: SystemTrayEvent) {
             _ => {}
         }
     };
+
+
 }
