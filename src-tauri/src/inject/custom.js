@@ -320,6 +320,7 @@ function modifyHeader() {
     item.innerText = name;
     item.target = '_blank';
     item.className = 'navBar_link';
+    item.style.cursor = 'pointer';
 
     item.addEventListener('click', () => {
       window.__TAURI__.shell.open(url);
