@@ -1,0 +1,132 @@
+.readerControls {
+    left: unset !important;
+    margin-left: unset !important;
+    right: 16px !important;
+    transition: opacity .3s ease-in-out;
+  }
+  
+  div.app_content div.readerTopBar {
+    height: 32px;
+    left:0;
+    right:0;
+    width: unset;
+    max-width: unset;
+    transition: opacity .3s ease-in-out;
+  }
+  
+  div.readerContent div.app_content {
+    max-width: ${getLS(contentWidthKey) || 1000}px !important; 
+  }
+  
+  .wr_whiteTheme .readerContent div.app_content {
+    background-color: rgb(253,246,227) !important;
+  }
+  
+  .readerBottomBar {
+    display: none !important;
+  }
+  
+  .drag-bar {
+    position: fixed;
+    height: 100%;
+    width: 8px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .right-bar {
+    cursor: col-resize;
+    left: 50%;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
+    background: linear-gradient(0.25turn, #295BE9, #295BE9 20%, transparent 20%, transparent);
+    opacity: 0;
+  }
+  
+  .right-bar.active {
+    opacity: 1;
+  }
+  
+  .left-bar {
+    right: 50%;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
+    background: linear-gradient(0.75turn, #295BE9, #295BE9 20%, transparent 20%, transparent);
+    opacity: 0;
+  }
+  
+  .left-bar.active {
+    opacity: 1;
+  }
+  
+  .darg-indicator {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: linear-gradient(0.25turn, transparent, #295BE9 20%, #295BE9 80%, transparent);
+    height: 2px;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
+    opacity: 0;
+    display: none;
+  }
+  
+  .darg-indicator.active {
+    opacity: 1;
+    display: block;
+  }
+  
+  .ind-num {
+    font-size: 30px;
+    color: #295BE9;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    width: 500px;
+    text-align: center;
+    margin: auto auto 0;
+    text-shadow: 5px 3px 6px #576b95;
+    background: linear-gradient(45deg, transparent,#fff 50%, #fff 50%, transparent);
+    margin-bottom: 2px;
+    z-index: 10;
+    opacity: 0;
+    display: none;
+  }
+  
+  .ind-num.active {
+    opacity: 1;
+    display: block;
+  }
+  
+  .navBar_link.navBar_link_ChangeFont {
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navBar_font_menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .navBar-subMenu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .navBar-subMenu span {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .navBar-subMenu span:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  
