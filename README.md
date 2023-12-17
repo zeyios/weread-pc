@@ -7,9 +7,9 @@
 - [x] 阅读背景颜色修改
 - [x] 支持拖拽修改阅读宽度
 - [x] 支持隐藏按钮，沉浸式阅读 
+- [x] 全屏按钮
 
 待开发：
-- [ ] 全屏按钮
 - [ ] 自定义字体
 - [ ] 自定义背景色
 - [ ] 自定义背景图片
@@ -29,10 +29,16 @@
 
 <img src='./imgs/hide-icons.png' width=600/>
 
+<br/>
+更多菜单
 
-开发建议：[wiki](https://github.com/zeyios/weread-pc/wiki/%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE)，欢迎贡献代码。
+<img src='./imgs/menu.png' width=200/>
 
 
+<br/>
+开发建议：[wiki](https://github.com/zeyios/weread-pc/wiki/%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE) ，欢迎贡献代码。
+
+<br/><br/>
 请我喝杯咖啡😄：
 
 <img src='https://github.com/zeyios/weread-pc/assets/10176630/6df3a76e-41b0-4241-bfd4-c63c0e100411' alt='微信支付' width=100/>
