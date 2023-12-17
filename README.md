@@ -36,7 +36,8 @@
 
 
 <br/>
-开发建议：[wiki](https://github.com/zeyios/weread-pc/wiki/%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE) ，欢迎贡献代码。
+
+[开发建议](https://github.com/zeyios/weread-pc/wiki/%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE)，欢迎贡献代码。
 
 <br/><br/>
 请我喝杯咖啡😄：
