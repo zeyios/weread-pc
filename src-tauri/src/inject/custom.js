@@ -117,6 +117,20 @@ function applyCss() {
     button.menu_option_list_link {
       width: 100%
     }
+
+    .readerControls {
+      align-items: flex-end !important;
+    }
+
+    div.readerCatalog {
+      left: unset;
+      right: 0;
+    }
+
+    div.readerNotePanel {
+      left: unset;
+      right: 0; 
+    }
   `;
 
   const styleElement = document.createElement('style');
