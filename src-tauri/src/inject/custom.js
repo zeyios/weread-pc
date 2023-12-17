@@ -113,6 +113,10 @@ function applyCss() {
       opacity: 1;
       display: block;
     }
+
+    button.menu_option_list_link {
+      width: 100%
+    }
   `;
 
   const styleElement = document.createElement('style');
@@ -157,6 +161,8 @@ function scrollChange(isDown, diff) {
     readerTopBar.style.opacity = 1;
     readerControls.style.opacity = 1;
   }
+
+  renderMenu(false)
 }
 
 let lastScrollY;
@@ -354,6 +360,129 @@ function customHeader() {
   
 }
 
+function fullScreenTrigger() {
+  const tauri = window.__TAURI__;
+  const appWindow = tauri.window.appWindow;
+  appWindow.isFullscreen().then((fullscreen) => {
+    appWindow.setFullscreen(!fullscreen).then();
+  });
+}
+
+function fullScreenButton() {
+  const button = document.createElement('button');
+  button.textContent = '全屏切换(F11)'
+  button.className = 'menu_option_list_link'
+
+  button.addEventListener('click', () => {
+    fullScreenTrigger()
+  })
+  return button
+}
+
+function fontChangeButton() {
+  const button = document.createElement('button');
+  button.textContent = '🚧字体设置'
+  button.className = 'menu_option_list_link'
+
+  button.addEventListener('click', () => {
+    window.pakeToast('🚧施工中，敬请期待')
+    console.log('click fontChange button')
+  })
+  return button
+}
+
+function backgroundChangeButton() {
+  const button = document.createElement('button');
+  button.textContent = '🚧背景设置'
+  button.className = 'menu_option_list_link'
+
+  button.addEventListener('click', () => {
+    window.pakeToast('🚧施工中，敬请期待')
+    console.log('click bg change button')
+  })
+  return button
+}
+
+
+function renderMenu(isShow) {
+
+  const existedDom = document.getElementById('header-menu-id')
+  
+  if (!isShow) {
+    if (!!existedDom) {
+      existedDom.style.visibility = 'hidden'
+    }
+    return
+  }
+
+  if (!!existedDom) {
+    // 已经存在了，不需要再创建了。
+    existedDom.style.visibility = 'visible'
+    return;
+  }
+
+  const menuDom = document.createElement('div');
+  menuDom.id = 'header-menu-id';
+  document.body.appendChild(menuDom);
+
+  menuDom.className = 'menu_option_containerBorder'
+
+  menuDom.style = `
+    position: fixed;
+    top: 40px;
+    right: 16px;
+    background: white;
+    border: 1px solid #f2f2f2
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+    z-index: 1000;
+  `;
+
+  menuDom.appendChild(fullScreenButton())
+  menuDom.appendChild(fontChangeButton())
+  menuDom.appendChild(backgroundChangeButton())
+
+}
+
+// 头像下的menu
+function customMenu() {
+  const clickAreaDom = document.createElement('div');
+  clickAreaDom.id = 'header-menu-click-area';
+  document.body.appendChild(clickAreaDom);
+
+  clickAreaDom.style = `
+    width: 80px; 
+    height: 32px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    cursor: pointer;
+  `;
+
+
+  clickAreaDom.addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    renderMenu(true)
+  })
+}
+
+document.addEventListener('keydown', function(event) {
+  // 检查是否按下的是F11键
+  if (event.key === 'F11') {
+      fullScreenTrigger()
+  }
+});
+
+document.addEventListener('click', () => {
+  console.log('click docmutmen')
+  renderMenu(false)
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   titleHelper();
   loadFont();
@@ -362,8 +491,10 @@ document.addEventListener('DOMContentLoaded', () => {
   customHeader();
 
   if (window.location.pathname.indexOf('web/reader') >= 0) {
+    // 阅读页面
     scrollListener();
     renderDragBar();
+    customMenu()
   }
 });
 
