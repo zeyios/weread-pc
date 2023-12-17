@@ -29,5 +29,13 @@
 
 <img src='./imgs/hide-icons.png' width=600/>
 
+
+开发建议：[wiki](https://github.com/zeyios/weread-pc/wiki/%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE)，欢迎贡献代码。
+
+
+请我喝杯咖啡😄：
+
+<img src='https://github.com/zeyios/weread-pc/assets/10176630/6df3a76e-41b0-4241-bfd4-c63c0e100411' alt='微信支付' width=100/>
+
 ---
 感谢 [Pake](https://github.com/tw93/Pake/) 封装的基础能力。
